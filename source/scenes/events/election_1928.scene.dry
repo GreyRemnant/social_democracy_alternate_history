@@ -105,7 +105,7 @@ Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.right_coalition = Q.z_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
 Q.far_right_coalition = Q.dnvp_r + Q.nsdap_r;
-Q.left_coalition = Q.spd_r + Q.kpd_r + Q.sapd_r;
+Q.Progressive_coalition = Q.spd_r + Q.kpd_r + Q.sapd_r;
 // this is an absurd concept lol
 Q.popular_front_coalition = Q.spd_r + Q.kpd_r + Q.z_r + Q.ddp_r - 3 + Q.sapd_r;
 Q.anti_democratic_coalition = Q.kpd_r + Q.nsdap_r + Q.dnvp_r;
@@ -129,7 +129,7 @@ Q.kpd_coalition_dissent = 0;
 Q.spd_in_government = 0;
 Q.in_weimar_coalition = 0;
 Q.in_grand_coalition = 0;
-Q.in_left_front = 0;
+Q.in_Progressive_front = 0;
 Q.in_popular_front = 0;
 Q.in_emergency_government = 0;
 Q.in_minority_government = 0;
@@ -322,7 +322,7 @@ There are some potential coalition arrangements.
 - @far_right_coalition
 - @no_majority
 - @brauns_dilemma
-- @left_coalition
+- @Progressive_coalition
 - @popular_front_coalition
 - @right_coalition
 
@@ -375,14 +375,14 @@ go-to: popular_front_success
 
 @great_popular_front
 view-if: z_party_leader == "Joos" and kpd_party_leader == "Conciliators"
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
+on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_Progressive_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 achievement: grosse_volksfront
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 
 Somehow, the coalition is successfully formed! The conciliatory leadership of the Center Party and KPD helped make the negotiations possible. We still need a chancellor; the only acceptable choice among the parties was Rudolf Breitscheid of the SPD, acceptable to the Center and KPD [? if president == "Hindenburg" : as well as President Hindenburg, albeit extremely reluctantly ?].
 
 @popular_front_success
-on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_left_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
+on-arrival: spd_in_government = 1; in_popular_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; kpd_relation += 10; coup_progress += 2; in_Progressive_front = 0; in_weimar_coalition = 0; in_grand_coalition = 0; coalition_dissent = 0;
 go-to: popular_front_civil_war if coup_progress >= 10; popular_front_no_civil_war if coup_progress < 10
 achievement: volksfront
 
@@ -392,7 +392,7 @@ Somehow, surprisingly, the coalition is successfully formed! We still need a cha
 on-arrival: kpd_goals_seen = 0; finance_minister_party = "Z"; interior_minister_party = "Z"; economic_minister_party = "Z"; labor_minister_party = "Z"; foreign_minister_party = "Z"; agriculture_minister_party = "Z"; reichswehr_minister = "I"; leverage = spd_r + kpd_r;
 achievement: volksfront
 
-In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that the Popular Front government will be unstable and incompetent, and will collapse of its own accord, discrediting the Progressive and center and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
 The KPD has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" within the Popular Front government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that the Popular Front would inevitably fail, and that our failure would benefit them.
 
@@ -448,39 +448,39 @@ Alternatively, Braun could use the emergency powers of the presidency. Article 4
 - @far_right_win: Let the Nazis form their government.
 
 
-@left_coalition
-title: Is a United Left coalition possible?
-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%)
-unavailable-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ left_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the KPD. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
-view-if: left_coalition >= 50
+@Progressive_coalition
+title: Is a United Progressive coalition possible?
+subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ Progressive_coalition +]%)
+unavailable-subtitle: SPD + KPD [? if sapd_formed: + SAPD ?] ([+ Progressive_coalition +]%). [? if kpd_relation < 50 : We do not have adequate relations with the KPD. ?][? if communist_coalition < 3 : The Communists are too committed to their radical ways to partake in government. ?]
+view-if: Progressive_coalition >= 50
 choose-if: (kpd_relation >= 50 or (kpd_party_leader == "Conciliators" and kpd_relation >= 40)) and communist_coalition >= 3
 
 There are enough votes for a SPD + KPD coalition government, if such a thing were actually possible.
 
 The far-right might attempt a coup, if such a coalition were formed.
 
-- @left_coalition_impossible: This is impossible.
-- @left_coalition_possible: This could be possible.
+- @Progressive_coalition_impossible: This is impossible.
+- @Progressive_coalition_possible: This could be possible.
 
-@left_coalition_impossible
+@Progressive_coalition_impossible
 go-to: coalition_menu
 
-A far left coalition is impossible.
+A far Progressive coalition is impossible.
 
 
-@left_coalition_possible
+@Progressive_coalition_possible
 
 The KPD is still very reluctant to join a coalition, despite grassroots friendliness between our memberships. The Stalinist leadership is vehemently against such a thing. They demand the appointment of Ernst Thälmann as chancellor in exchange for a coalition. [? if president == "Hindenburg" : There is no chance whatsoever that President Hindenburg would approve of the appointment of a die-hard communist as chancellor. ?] Alternatively, if our relations with them are good enough, we could convince them to support the appointment of one of our centrist or left-leaning members as chancellor.
 
 - @thalmann_chancellor: Appoint Thälmann as chancellor.
-- @left_coalition_resources
-- @left_coalition_relations
+- @Progressive_coalition_resources
+- @Progressive_coalition_relations
 - @coalition_menu: Try a different governing arrangement.
 
 @thalmann_chancellor
-choose-if: president == "Braun" and reformist_strength + neorevisionist_strength < left_strength
-unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= left_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
-on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; in_left_front = 1; spd_in_government = 1 
+choose-if: president == "Braun" and reformist_strength + neorevisionist_strength < Progressive_strength
+unavailable-subtitle: [? if president != "Braun": President [+ president +] would never allow such a thing. ?] [? if reformist_strength >= Progressive_strength : Most in the parliamentary party would not support Thälmann as chancellor. ?]
+on-arrival: chancellor = "Thälmann"; chancellor_party = "KPD"; kpd_relation = 80; in_Progressive_front = 1; spd_in_government = 1 
 
 With great reluctance, President [+ president +] appoints [+ chancellor +] as chancellor.
 
@@ -491,40 +491,40 @@ In response to [+ chancellor +] being appointed Chancellor, the right-wing force
 - @civil_war
 
 
-@left_coalition_resources
+@Progressive_coalition_resources
 title: Use our resources to smooth things over.
 unavailable-subtitle: Required: 3 resources
 subtitle: -3 resources
 choose-if: resources >= 3
 on-arrival: resources -= 3
-go-to: left_coalition_success
+go-to: Progressive_coalition_success
 
-@left_coalition_relations
+@Progressive_coalition_relations
 title: Convince the KPD to accept democracy.
 unavailable-subtitle: Our relationships with the KPD are not good enough.
 choose-if: kpd_relation >= 60 or kpd_party_leader == "Conciliators"
-go-to: left_coalition_success
+go-to: Progressive_coalition_success
 
 
-@left_coalition_success
-on-arrival: spd_in_government = 1; in_left_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10
-go-to: left_coalition_civil_war if coup_progress >= 10; left_coalition_no_civil_war if coup_progress < 10
+@Progressive_coalition_success
+on-arrival: spd_in_government = 1; in_Progressive_front = 1; chancellor = "Breitscheid"; chancellor_party = "SPD"; coup_progress += 3; capital_strike_progress += 2; in_popular_front = 0; in_grand_coalition = 0; in_weimar_coalition = 0; kpd_relation += 10
+go-to: Progressive_coalition_civil_war if coup_progress >= 10; Progressive_coalition_no_civil_war if coup_progress < 10
 achievement: einheitsfront
 
-Somehow, surprisingly, the left coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the SPD, but was acceptable to the left due to his previous membership in the left-wing anti-war USPD.
+Somehow, surprisingly, the Progressive coalition is successfully formed, without appointing Thälmann as chancellor. The consensus choice for chancellor, accepted by the SPD, KPD, and President [+ president +], is Rudolf Breitscheid, who belongs to the centrist faction of the SPD, but was acceptable to the Progressive due to his previous membership in the Progressive-wing anti-war USPD.
 
 # just raise the coup limit, don't immediately go to civil war
 
-@left_coalition_no_civil_war
+@Progressive_coalition_no_civil_war
 on-arrival: kpd_goals_seen = 0; foreign_minister_party = "SPD"; interior_minister_party = "SPD"; justice_minister_party = "SPD"; labor_minister_party = "SPD"; reichswehr_minister_party = "SPD"; economic_minister_party = "SPD"; finance_minister_party = "SPD"; agriculture_minister_party = "SPD"; reichswehr_loyalty -= 0.05
 
-In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the left and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
+In response to the KPD's entrance into the government, the right-wing takes a "wait-and-see" approach for now. They expect that our government will be unstable and incompetent, and will collapse of its own accord, discrediting the Progressive and eventually enabling the destruction of the Weimar Republic. Our task is to prove them wrong.
 
 The KPD has taken an abstentionist position with regards to ministries. They claim to be participating as the "loyal opposition" in the worker's government, supporting us from the outside while also running their own propaganda campaigns to turn workers to their side. They seem to expect that we would inevitably fail, and that our failure would benefit them. 
 
 Whatever their reasoning is, the SPD has control over the ministries of government.
 
-@left_coalition_civil_war
+@Progressive_coalition_civil_war
 on-arrival: reichswehr_loyalty += 0.1
 
 In response to the KPD's entrance into the government, the right-wing immediately launches a coup attempt. Troops of the Stahlhelm and Nazi SA enter Berlin and begin clashing with our supporters. Reactionary officers within the Reichswehr have taken their troops out of the barracks and joined them with the Stahlhelm to stop us from taking power.
@@ -552,7 +552,7 @@ However, the DNVP and its leader Hugenberg is refusing to partake in a coalition
 
 @right_coalition_sure
 subtitle: This will be extremely unpopular within our party.
-on-arrival: pro_republic -= 5; center_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5
+on-arrival: pro_republic -= 5; center_dissent += 15; Progressive_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5
 go-to: right_coalition_2
 
 
@@ -634,12 +634,12 @@ title: Use our resources to smooth over the creation of a coalition.
 subtitle: -2 resources
 unavailable-subtitle: Not enough resources (need 2).
 choose-if: resources >= 2
-on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; left_dissent += 4;
+on-arrival: resources -= 2; spd_in_government = 1; in_grand_coalition = 1; Progressive_dissent += 4;
 achievement: constitutional_coalition
 
 We transfer some of our campaign funds to our putative coalition partners. Some would call this corruption, but perhaps it is necessary to save our democracy.
 
-Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-fascist and non-communist parties. Leftists in our party are somewhat skeptical of this arrangement. 
+Now, we have a new grand coalition, a "Constitutional Coalition" of all the non-fascist and non-communist parties. Progressiveists in our party are somewhat skeptical of this arrangement. 
 
 
 Who should be chancellor?
@@ -661,7 +661,7 @@ title: The Center Party offers a "Government of National Unity" under Chancellor
 subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP + Others ([+ neo_weimar_coalition +]%)
 view-if: z_party_leader == "Joos" and neo_weimar_coalition >= 50 and weimar_coalition < 50 and z_relation >= 10
 
-The Center Party leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a left-leaning member of the Center Party and former chancellor, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
+The Center Party leader, Joseph Joos, clearly sees the threat from the ascension of the anti-democratic extremist parties, and thus tries to negotiate a "Government of National Unity" to save the republic. This coalition would be led by Joseph Wirth, a Progressive-leaning member of the Center Party and former chancellor, and would encompass all of the constitutional parties. Our role in this government might be limited, however.
 
 - @unity_government_2
 - @reject_unity_government: No, we will not accept this offer.
@@ -782,7 +782,7 @@ President Braun faces a dilemma. He desperately desires a socialist or at least 
 - @emergency_braun: We will form an emergency government with Braun's support.
 - @new_elections: We will have new elections.
 - @new_grand_coalition
-- @left_coalition
+- @Progressive_coalition
 - @popular_front_coalition
 - @far_right_coalition
 
@@ -922,7 +922,7 @@ We have won the vote of no confidence, and are currently ruling under an SPD min
 title: We can form a Weimar Coalition.
 subtitle: SPD + Z + [+ ddp_name +] [? if sapd_formed and kpd_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
-on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
+on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_Progressive_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
 We have enough votes to form a "Weimar Coalition" government consisting of the SPD, Center (Z) and Democratic ([+ ddp_name +]) parties! This has been our preferred governing coalition since 1919.
@@ -938,7 +938,7 @@ Who should be the chancellor?
 
 @breitscheid_coalition_chancellor
 title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
+subtitle: Breitscheid is viewed as friendlier towards the Progressive of the SPD.
 view-if: year >= 1930
 on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
 go-to: ministries
@@ -950,7 +950,7 @@ Rudolf Breitscheid has been appointed chancellor.
 title: We can form a Grand Coalition.
 view-if: grand_coalition >= 50 and grand_coalition_failed == 0
 subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP ([+ grand_coalition +]%)
-on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
+on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_Progressive_front = 0
 go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
 
 # TODO: if there are enough votes to form a grand coalition, who leads? Does the SPD lead or does Brüning (Z) lead? In reality this depended on Hindenburg's will, basically, which in turn depended on what his camarilla supported.
@@ -1172,7 +1172,7 @@ We have promised to let the Center have more influence in the government in resp
 @z_chancellor
 title: Let the Center Party have their chancellor.
 subtitle: Heinrich Brüning will be chancellor. This is unexpected and will cause internal dissent, but may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+on-arrival: Progressive_dissent += 5; center_dissent += 5; labor_dissent += 5; z_relation += 10; dvp_relation += 5; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Brüning"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
 go-to: ministries
 
 This is highly unexpected, and many in the left and center of our party are criticizing this decision.
@@ -1183,8 +1183,8 @@ This is highly unexpected, and many in the left and center of our party are crit
 @z_chancellor_wirth
 title: Let Joseph Wirth of the Center Party be chancellor.
 view-if: z_party_leader == "Joos"
-subtitle: Wirth is on the left wing of the Center Party. This may give us a better position in negotiating for other cabinet positions.
-on-arrival: left_dissent += 2; z_relation += 6; ddp_relation += 3; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
+subtitle: Wirth is on the Progressive wing of the Center Party. This may give us a better position in negotiating for other cabinet positions.
+on-arrival: Progressive_dissent += 2; z_relation += 6; ddp_relation += 3; kpd_relation -= 5; in_grand_coalition = 1 if in_weimar_coalition == 0; chancellor = "Wirth"; chancellor_party = "Z"; spd_in_government = 1; leverage += 5
 go-to: ministries
 
 
@@ -1239,7 +1239,7 @@ We are seen as responsible for the failure to form a government, and many of our
 
 @ministries
 
-We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_left_front : Any ministry that we do not take will be given to the KPD. ?] [? if in_left_front and reichswehr_minister_party == "KPD" : If the KPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
+We can pick from any number of ministries. Controlling a ministry allows us to directly effect policy in that area. [? if in_Progressive_front : Any ministry that we do not take will be given to the KPD. ?] [? if in_Progressive_front and reichswehr_minister_party == "KPD" : If the KPD controls the Reichswehr Ministry, the army will most likely revolt. ?]
 
 - #mins_1928
 - #drop_mins_1928

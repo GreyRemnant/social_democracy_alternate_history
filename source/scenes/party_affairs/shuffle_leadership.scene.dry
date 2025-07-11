@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: center_advisor, Progressive_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
 frequency: 1
 
 - #remove_advisor
@@ -149,52 +149,52 @@ go-to: rm_main
 
 Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
-# left
+# Progressive
 
 @remove_levi
 title: Remove Levi
 view-if: levi_advisor = 1
 tags: remove_advisor
-on-arrival: levi_advisor = 0; left_dissent += 5; n_advisors -= 1
+on-arrival: levi_advisor = 0; Progressive_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Levi has been removed as an advisor. The Leftist faction disapproves.
+Levi has been removed as an advisor. The Progressiveist faction disapproves.
 
 @remove_sender
 title: Remove Sender
 view-if: sender_advisor = 1
 tags: remove_advisor
-on-arrival: sender_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: sender_advisor = 0; Progressive_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Sender has been removed as an advisor. The Leftist faction disapproves.
+Sender has been removed as an advisor. The Progressiveist faction disapproves.
 
 @remove_rosenfeld
 title: Remove Rosenfeld
 view-if: rosenfeld_advisor = 1
 tags: remove_advisor
-on-arrival: rosenfeld_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: rosenfeld_advisor = 0; Progressive_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Rosenfeld has been removed as an advisor. The Leftist faction disapproves.
+Rosenfeld has been removed as an advisor. The Progressiveist faction disapproves.
 
 @remove_seydewitz
 title: Remove Seydewitz
 view-if: seydewitz_advisor = 1
 tags: remove_advisor
-on-arrival: seydewitz_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: seydewitz_advisor = 0; Progressive_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Seydewitz has been removed as an advisor. The Leftist faction disapproves.
+Seydewitz has been removed as an advisor. The Progressiveist faction disapproves.
 
 @remove_siemsen
 title: Remove Siemsen
 view-if: siemsen_advisor = 1
 tags: remove_advisor
-on-arrival: siemsen_advisor = 0; left_dissent += 3; n_advisors -= 1
+on-arrival: siemsen_advisor = 0; Progressive_dissent += 3; n_advisors -= 1
 go-to: rm_main
 
-Siemsen has been removed as an advisor. The Leftist faction disapproves.
+Siemsen has been removed as an advisor. The Progressiveist faction disapproves.
 
 
 
@@ -286,12 +286,12 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: center_advisor, Progressive_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @centrist: Add Centrists
-- @left: Add Leftists
+- @Progressive: Add Progressiveists
 - @reformist: Add Reformists
 - @labor: Add Labor
 - @neorev: Add Neorevisionists
@@ -309,10 +309,10 @@ view-if: n_advisors < 3
 
 - #reformist_advisor
 
-@left
+@Progressive
 view-if: n_advisors < 3
 
-- #left_advisor
+- #Progressive_advisor
 
 @labor
 view-if: n_advisors < 3
@@ -331,7 +331,7 @@ view-if: n_advisors < 3
 
 @add_hilferding
 title: Rudolf Hilferding
-subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Progressive, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
 tags: center_advisor
@@ -430,53 +430,53 @@ Antonie Pfülf is now an advisor.
 
 
 
-# left
+# Progressive
 
 @add_levi
 title: Paul Levi
-subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD ?]
+subtitle: Paul Levi is a former KPD leader who was purged for criticizing Communist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Progressive, Cooperation with the KPD ?]
 is-card: true
 card-image: img/portraits/LeviPaul.jpg
-view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and left_split = 0
-on-arrival: levi_advisor = 1; n_advisors += 1; left_strength += 5
+view-if: levi_advisor = 0 and levi_dead = 0 and n_advisors < 3 and Progressive_split = 0
+on-arrival: levi_advisor = 1; n_advisors += 1; Progressive_strength += 5
 go-to: advisor_menu
-tags: left_advisor
+tags: Progressive_advisor
 
 Paul Levi is now an advisor.
 
 @add_sender
 title: Toni Sender
-subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Left-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
+subtitle: Toni Sender is an anti-war and womens' rights advocate, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Progressive-Center Unity, Organizing Women, Against Toleration, Addressing the Economic Crisis ?]
 is-card: true
 card-image: img/portraits/SenderToni.jpg
 view-if: sender_advisor = 0 and n_advisors < 3
-on-arrival: sender_advisor = 1; n_advisors += 1; left_strength += 5
+on-arrival: sender_advisor = 1; n_advisors += 1; Progressive_strength += 5
 go-to: advisor_menu
-tags: left_advisor
+tags: Progressive_advisor
 
 Toni Sender is now an advisor.
 
 @add_rosenfeld
 title: Kurt Rosenfeld
-subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Left, Cooperation with the KPD, Against Toleration ?]
+subtitle: Kurt Rosenfeld is a lawyer, anti-militarist activist, and Reichstag member. {!<br><br>!}[? if difficulty < 0 : Actions - Building the Progressive, Cooperation with the KPD, Against Toleration ?]
 is-card: true
 card-image: img/portraits/RosenfeldKurt.jpg
-view-if: rosenfeld_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: rosenfeld_advisor = 1; n_advisors += 1; left_strength += 5
+view-if: rosenfeld_advisor = 0 and n_advisors < 3 and Progressive_split = 0
+on-arrival: rosenfeld_advisor = 1; n_advisors += 1; Progressive_strength += 5
 go-to: advisor_menu
-tags: left_advisor
+tags: Progressive_advisor
 
 Kurt Rosenfeld is now an advisor.
 
 @add_seydewitz
 title: Max Seydewitz
-subtitle: Max Seydewitz is a former leader of the youth wing, current supporter of the left wing of the SPD, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
+subtitle: Max Seydewitz is a former leader of the youth wing, current supporter of the Progressive wing of the SPD, and advocates for class struggle. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Class Struggle, Socialist Youth, Against Toleration ?]
 is-card: true
 card-image: img/portraits/SeydewitzMax.jpg
-view-if: seydewitz_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: seydewitz_advisor = 1; n_advisors += 1; left_strength += 5
+view-if: seydewitz_advisor = 0 and n_advisors < 3 and Progressive_split = 0
+on-arrival: seydewitz_advisor = 1; n_advisors += 1; Progressive_strength += 5
 go-to: advisor_menu
-tags: left_advisor
+tags: Progressive_advisor
 
 Max Seydewitz is now an advisor.
 
@@ -485,10 +485,10 @@ title: Anna Siemsen
 subtitle: Anna Siemsen is an and educational reform advocate and pacifist, who was one of the few German women to receive a PhD in the pre-war period. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Pacifism, Educational Curriculum, Educational Structure ?]
 is-card: true
 card-image: img/portraits/SiemsenAnna.jpg
-view-if: siemsen_advisor = 0 and n_advisors < 3 and left_split = 0
-on-arrival: siemsen_advisor = 1; n_advisors += 1; left_strength += 5
+view-if: siemsen_advisor = 0 and n_advisors < 3 and Progressive_split = 0
+on-arrival: siemsen_advisor = 1; n_advisors += 1; Progressive_strength += 5
 go-to: advisor_menu
-tags: left_advisor
+tags: Progressive_advisor
 
 Anna Siemsen is now an advisor.
 

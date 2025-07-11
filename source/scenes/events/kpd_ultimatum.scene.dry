@@ -1,5 +1,5 @@
 title: The KPD checks upon our progress in accomplishing the coalition's goals...
-view-if: (in_popular_front or in_left_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
+view-if: (in_popular_front or in_Progressive_front) and (kpd_ultimatum_timer = 0 or (welfare_goal_completed and agriculture_goal_completed and economy_goal_completed and finance_goal_completed and labor_goal_completed and reichswehr_goal_completed)) and kpd_goals_seen = 1 and kpd_ultimatum_seen = 0 and spd_in_government
 on-arrival: {!
 Q.kpd_ultimatum_seen = 1;
 Q.kpd_goals_completed = 1;
@@ -78,7 +78,7 @@ We argue that we are working hard to achieve the coalition's goals, and in the n
 
 @goals_success
 on-arrival: workers_spd += 8; unemployed_spd += 8; kpd_relation += 10; workers_kpd += 5; kpd_coalition_success += 1
-go-to: popular_front_achievement if in_popular_front; united_front_achievement if in_left_front
+go-to: popular_front_achievement if in_popular_front; united_front_achievement if in_Progressive_front
 
 Against all expectations, the KPD's goals have all been met! Apparently the Communists did not prepare for this eventuality, a worker's government successfully built through democratic means. They will continue to "tolerate" our government for the rest of our term, while still acting as a watchdog against bourgeois backsliding.
 
@@ -93,6 +93,6 @@ achievement: einheitsfront_2
 
 @no_vonc
 view-if: constructive_vonc
-on-arrival: in_popular_front = 0; in_left_front = 0; in_minority_government = 1;
+on-arrival: in_popular_front = 0; in_Progressive_front = 0; in_minority_government = 1;
 
 We have been effectively made a minority government, and the KPD intends to obstruct our attempts to pass policy.

@@ -8,7 +8,7 @@ v0.7:
 
 Major changes:
 
-- New advisors: Antonie Pfülf (reformist), Julius Leber (neorevisionist), Kurt Rosenfeld (left)
+- New advisors: Antonie Pfülf (reformist), Julius Leber (neorevisionist), Kurt Rosenfeld (Progressive)
 - New events: All Quiet on the Western Front, Altona Clashes
 - New party affairs card: Building a People's Party
 - New government affairs cards: Homosexual Rights, Agricultural Policy (plus an Agriculture Minister position).
@@ -17,7 +17,7 @@ Minor changes:
 
 - Can return cards to the hand on easy/normal difficulties.
 - If a vote of no confidence is held when new elections are happening in less 3 months, don't delay the elections.
-- New advisor actions: End toleration (for some left advisors)
+- New advisor actions: End toleration (for some Progressive advisors)
 - Added descriptions of the internal party factions.
 - Some more tax options.
 - Abortion rights and homosexual rights can be passed with a "progressive coalition" of the SPD, KPD, and DDP.
@@ -29,7 +29,7 @@ Minor changes:
 Future changes:
 
 - Move end date to later in 1933.
-- Government Affairs: Economic Democracy (labor + economy ministries), Left-wing economic crisis response (pursue nationalizations), Further investigate SA/SH/RFB after banning.
+- Government Affairs: Economic Democracy (labor + economy ministries), Progressive-wing economic crisis response (pursue nationalizations), Further investigate SA/SH/RFB after banning.
 - More tax/tariff policy options
 - A history page, showing a history of your actions.
 - Increase hand size to 4 (at least for easy difficulty)
@@ -60,7 +60,7 @@ Major changes:
 
 - New government affairs card: Economic Democracy (labor + economy/finance ministries). New advisor action for Hilferding.
 - New events: March on Berlin, Capital Strike.
-- New options: Left economic plan for the transformation of the economy (mass nationalizations), advisor actions to support the Left economic plan (Sender, Aufhäuser)
+- New options: Progressive economic plan for the transformation of the economy (mass nationalizations), advisor actions to support the Progressive economic plan (Sender, Aufhäuser)
 - New achievements: Räterepublik, Polykrise
 - Ending of the game is set to May 1933.
 - Changed the demographic system somewhat - previously, raising support in one demographic could increase total support beyond that demographic's numbers. This made working-class support more powerful compared to its actual proportion of the population. This is no longer possible. To compensate, it is now easier to increase support among the unemployed and other demographics.
@@ -71,7 +71,7 @@ Minor changes:
 
 Future changes:
 
-- Government with the popular front without civil war is possible (but might have votes of no confidence from both the right and the left, and a higher likelihood of right-wing coups).
+- Government with the popular front without civil war is possible (but might have votes of no confidence from both the right and the Progressive, and a higher likelihood of right-wing coups).
 - "Historical" difficulty that constrains SPD actions to be more historically accurate.
 - Record of previous actions in the library
 - Tariffs
@@ -279,7 +279,7 @@ Minor changes:
 
 - Some changes to when Papen can be appointed Chancellor.
 - Economic Democracy options can reduce unemployment.
-- Slightly increased unemployment reduction from the Left Plan.
+- Slightly increased unemployment reduction from the Progressive Plan.
 
 
 v0.15.1 - bug fixes
@@ -298,7 +298,7 @@ v0.16 - Constitutional Reform, new advisors, Zentrum politics
 Major changes:
 - New government card - Constitutional reform (requires judicial ministry, at least a Weimar Coalition, and neorevisionism) - change vote threshold for Reichstag representation, requiring a constructive vote of no confidence, reducing presidential powers.
 - new category of advisors - non-factional. New advisors: Magnus Hirschfeld, Gustav Radbruch, Fritz Baade, Friedrich Stampfer.
-- New advisor: Max Seydewitz (left)
+- New advisor: Max Seydewitz (Progressive)
 - New advisor actions: Fiscal Policy (Hilferding). Now, all cabinet ministry actions should have a corresponding advisor action (Economic Ministry is Woytinsky's action).
 - New event: Center Party Conference of December 1928 - if relations with the Center Party are strong enough, then it's possible to support Joseph Joos as party leader in place of Ludwig Kaas. This unlocks additional government options.
 - New government options: National Unity Government under Joseph Wirth (see previous) - this is basically a Constitutional Coalition.
@@ -334,7 +334,7 @@ As with many other major changes, there are a number of bugs introduced here...
 v0.17 - Conciliators and the SAPD
 
 Major changes:
-- The SAPD is introduced as a new party that receives Reichstag seats when both the Left and Center resign.
+- The SAPD is introduced as a new party that receives Reichstag seats when both the Progressive and Center resign.
 - Internal manipulations of the KPD - scheming can allow the Conciliator faction to take over the KPD, making the party more friendly to the SPD and coalitions. This is a chain of events beginning with the Wittorf Affair, a scandal involving Ernst Thälmann of the KPD, as well as foreign relations with the Soviet Union.
 - New achievements: Versöhnler - have the conciliators take over the KPD; Große Volksfront - form a Popular Front with both Joos as Zentrum leader and the Conciliators as the KPD leaders; Katholischer Sozialismus - have over 50% support from Catholics.
 - Added two new pieces of music.
@@ -468,7 +468,7 @@ Major changes:
 - New event: Kellogg-Briand Pact
 - New Government Affairs card: Education and Science - change the educational curriculum or fund scientific research.
 - New statistic - economic growth. Higher growth leads to lower unemployment, while negative growth will increase unemployment.
-- New advisor: Anna Siemsen (Left, education), new advisor action for Hirschfeld (Science funding)
+- New advisor: Anna Siemsen (Progressive, education), new advisor action for Hirschfeld (Science funding)
 - New achievements: Republik der Wissenschaft (Albert Einstein is elected president in 1934), Arbeiter von Wien (SDAPÖ victory in Austria)
 
 Minor changes:

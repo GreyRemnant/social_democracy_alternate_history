@@ -12,7 +12,7 @@ max-visits: 12
 
 The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
+- @liberals: Strengthen our bonds with the Progressive-liberal German Democratic Party and conservative-liberal German People's Party.
 - @center: Strengthen our bonds with the Catholic Center Party.
 - @kpd: Work towards repairing relationships with the Communist Party.
 - @spd_alone: The SPD can stand alone for now.
@@ -41,7 +41,7 @@ For further improvements in KPD relations, it might be necessary to expel Noske,
 - @no_history: No, we have no need to apologize.
 
 @yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
+on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; Progressive_dissent -= 6; Progressive_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
 
 As part of normalizing relations with the KPD, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
 

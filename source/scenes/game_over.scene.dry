@@ -342,7 +342,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if game_achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
 
-[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
+[? if game_achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Progressive Front that survives the KPD demands. ?]
 
 [? if game_achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
 
@@ -449,7 +449,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
 
-[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
+[? if achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Progressive Front that survives the KPD demands. ?]
 
 [? if achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
 
@@ -554,7 +554,7 @@ go-to: eg_menu if started == 1; root.start_menu_2 if started == 0
 
 [? if not achievement_einheitsfront: **Einheitsfront** - Form a government consisting of the SPD and KPD. ?]
 
-[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Left Front that survives the KPD demands. ?]
+[? if not achievement_einheitsfront_2: **Sieg für die Einheitsfront** - Form a Progressive Front that survives the KPD demands. ?]
 
 [? if not achievement_volksfront: **Volksfront** - Form a government consisting of the SPD, KPD, Z, and DDP. ?]
 
